@@ -1,14 +1,17 @@
+#include "math.h"
 
-
-            int* toBinaryArray(int i)
+int* toBinaryArray(int i)
            {
-                int bitLength = 
+                int bitLength = (int)log2(i) + 1;
                 int* binaryArray = (int*)malloc(4 * bitLength);
-                var copy = i;
-                var radix = 0;
+                int* binaryArrayPtr = (int*)((int)binaryArray + 4 * (bitLength - 1));
+                int copy = i;
+                int radix = 0;
                 while(copy >= 0)
                 {
-                
+                    int remainder = copy & 1;
+                    *binaryArrayPtr = remainder;
+                    binaryArrayPtr = (int*)((int)binaryArrayPtr - 4);
                 }
             }
 
