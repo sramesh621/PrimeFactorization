@@ -1,5 +1,21 @@
 #include "math.h"
 
+int** findBinaryGaps(int i)
+{
+           int bitLength = (int)log2(i) + 1;
+    int** gapsList = (int**)malloc(4 * bitLength);
+           int* binaryArray = toBinaryArray(i);
+           int idx = 0;
+           while(idx < bitLength)
+                      {
+                                 int* binaryArrayPtr = (int*)((int)binaryArray + 4 * idx);
+                                 if(*binaryArrayPtr == 0)
+                                 {
+                                            asdf
+                                 }
+                      }
+}
+
 int* toBinaryArray(int i)
            {
                 int bitLength = (int)log2(i) + 1;
