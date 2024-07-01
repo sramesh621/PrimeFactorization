@@ -11,7 +11,11 @@ int** findBinaryGaps(int i)
                                  int* binaryArrayPtr = (int*)((int)binaryArray + 4 * idx);
                                  if(*binaryArrayPtr == 0)
                                  {
-                                            asdf
+                                           while(*binaryArrayPtr == 0)
+                                                      {
+                                                                 binaryArrayPtr = (int*)((int)binaryArrayPtr + 4);
+                                                                 idx++;
+                                                      }
                                  }
                       }
 }
