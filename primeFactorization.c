@@ -19,11 +19,13 @@ int** findBinaryGaps(int i)
                                                                  binaryArrayPtr = (int*)((int)binaryArrayPtr + 4);
                                                                  idx++;
                                                       }
+                                            emptySpan = (int*)((int)emptySpan + 4);
                                             *emptySpan = idx - 1;
-                                            *binaryArray = emptySpan;
-                                            gapIndex++;
+                                            *gapsList = emptySpan;
+                                            gapsList = (int*)((int)gapsList + 4);
                                  }
                       }
+           return gapsList;
 }
 
 int* toBinaryArray(int i)
