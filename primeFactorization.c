@@ -6,16 +6,22 @@ int** findBinaryGaps(int i)
     int** gapsList = (int**)malloc(4 * bitLength);
            int* binaryArray = toBinaryArray(i);
            int idx = 0;
+           int gapIndex = 0;
            while(idx < bitLength)
                       {
                                  int* binaryArrayPtr = (int*)((int)binaryArray + 4 * idx);
                                  if(*binaryArrayPtr == 0)
                                  {
+                                            int* emptySpan = (int*)malloc(8);
+                                            *emptySpan = idx;
                                            while(*binaryArrayPtr == 0)
                                                       {
                                                                  binaryArrayPtr = (int*)((int)binaryArrayPtr + 4);
                                                                  idx++;
                                                       }
+                                            *emptySpan = idx - 1;
+                                            *binaryArray = emptySpan;
+                                            gapIndex++;
                                  }
                       }
 }
