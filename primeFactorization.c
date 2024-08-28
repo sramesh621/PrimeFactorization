@@ -3,7 +3,7 @@
 int** findBinaryGaps(int i)
 {
            int bitLength = (int)log2(i) + 1;
-    int** gapsList = (int**)malloc(4 * bitLength);
+           int** gapsList = (int**)malloc(4 * bitLength);
            int* binaryArray = toBinaryArray(i);
            int idx = 0;
            int gapIndex = 0;
