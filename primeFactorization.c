@@ -19,8 +19,7 @@ int** findBinaryGaps(int i)
                                                                  binaryArrayPtr = (int*)((int)binaryArrayPtr + 4);
                                                                  idx++;
                                                       }
-                                            emptySpan = (int*)((int)emptySpan + 4);
-                                            *emptySpan = idx - 1;
+                                            *((int)emptySpan + 4) = idx - 1;
                                             *gapsList = emptySpan;
                                             gapsList = (int*)((int)gapsList + 4);
                                  }
@@ -45,7 +44,7 @@ int* toBinaryArray(int i)
                 return binaryArray;
             }
 
-            function factorTheKey()
+            void factorTheKey()
             {
             var product = document.getElementById(“keyInputId”).value;
                 var maxFactor = Math.sqrt(product);
