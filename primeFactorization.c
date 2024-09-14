@@ -23,6 +23,10 @@ int** findBinaryGaps(int i)
                                             *gapsList = emptySpan;
                                             gapsList = (int*)((int)gapsList + 4);
                                  }
+                                 while(*binaryArrayPtr == 1)
+                                 {
+                                            binaryArrayPtr = (int*)((int)binaryArrayPtr + 4);
+                                 }
                       }
            return gapsList;
 }
