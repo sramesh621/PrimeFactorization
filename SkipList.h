@@ -6,6 +6,6 @@ struct SkipListNode
 };
 
 void initSkipList(SkipListNode* const initMe);
-void getListIndex(SkipListNode* const skipList, byte numDigits);
+int getListIndex(SkipListNode* const skipList, byte numDigits);
 void addListNode(SkipListNode* const skipList, byte numDigits, int location);
 void deleteSkipList(SkipListNode* const toDelete);
