@@ -46,7 +46,7 @@ void addListNode(SkipListNode* const skipList, byte numDigits, int location)
             previousNode = currentNode;
             currentNode = currentNode->nextNode;
         }
-        SkipListNode* const insertNode = (SkipListNode*)malloc(12);
+        SkipListNode* const insertNode = (SkipListNode*)malloc(sizeof(SkipListNode));
         insertNode->numDigits = numDigits;
         insertNode->index = location;
         previousNode->nextNode = insertNode;
@@ -54,7 +54,12 @@ void addListNode(SkipListNode* const skipList, byte numDigits, int location)
     }
 }
 
-void deleteSkipList(SkipListNode* const toDelete)
+void deleteSkipList(SkipListNode* toDelete)
 {
-    
+    if(toDelete != NULL)
+    {
+        SkipListNode* const nextNode = toDelete->nextNode;
+        deleteSkipList(toDelete);
+        free(toDelete);
+    }
 }
