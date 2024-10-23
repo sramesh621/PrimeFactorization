@@ -33,6 +33,28 @@ int getListIndex(SkipListNode* const skipList, byte numDigits)
 
 void addListNode(SkipListNode* const skipList, byte numDigits, int location)
 {
+    if(skipList != NULL)
+    {
+        SkipListNode* previousNode = NULL;
+        SkipListNode* currentNode = skipList;
+        while(currentNode != NULL)
+        {
+            if(currentNode->numDigits >= numDigits)
+            {
+                 break;
+            }
+            previousNode = currentNode;
+            currentNode = currentNode->nextNode;
+        }
+        SkipListNode* const insertNode = (SkipListNode*)malloc(12);
+        insertNode->numDigits = numDigits;
+        insertNode->index = location;
+        previousNode->nextNode = insertNode;
+        insertNode->nextNode = currentNode;
+    }
+}
+
+void deleteSkipList(SkipListNode* const toDelete)
+{
     
 }
-void deleteSkipList(SkipListNode* const toDelete);
